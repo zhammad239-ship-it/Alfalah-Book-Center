@@ -1,0 +1,1408 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfalah Book Center | Bookstore in Karachi, Pakistan</title>
+    <meta name="description" content="Explore books, novels, academic books, and reading collections at Alfalah Book Center in Karachi, Pakistan. Contact us for inquiries and book availability.">
+    <meta name="keywords" content="Alfalah Book Center Karachi, Bookstore Karachi, Academic Books, Novels Pakistan, Childrens Books, Fiction Non-Fiction Bookstore">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Alfalah Book Center | Bookstore in Karachi, Pakistan">
+    <meta property="og:description" content="Explore books and reading collections at Alfalah Book Center in Karachi, Pakistan.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23800020'><path d='M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z'/></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- All CSS inside <style> -->
+    <style>
+        :root {
+            --primary: #5c1d24; /* Rich burgundy / bookstore maroon */
+            --primary-dark: #3b1116;
+            --accent: #c59b27; /* Warm antique gold */
+            --bg-cream: #fbf9f5;
+            --bg-card: #ffffff;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --border-color: #e6e0d5;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Buttons & CTAs */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(92, 29, 36, 0.25);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background-color: var(--accent);
+            color: #1a1a1a;
+        }
+
+        .btn-gold:hover {
+            background-color: #b08920;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(251, 249, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 90px;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #f4efe4 100%);
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            color: var(--primary);
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(197, 155, 39, 0.12);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffffff;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Section Commons */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .badge-label {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        /* Book Collections / Categories Grid */
+        .collections {
+            background-color: var(--bg-cream);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .collection-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(92, 29, 36, 0.08);
+            border-color: var(--accent);
+        }
+
+        .collection-img-box {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .collection-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .collection-card:hover .collection-img-box img {
+            transform: scale(1.06);
+        }
+
+        .collection-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .collection-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Featured Book Section */
+        .featured-books {
+            background-color: #ffffff;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .book-card {
+            background: var(--bg-cream);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+        }
+
+        .book-img-container {
+            height: 280px;
+            background: #eef2f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .book-card:hover .book-img-container img {
+            transform: scale(1.04);
+        }
+
+        .book-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(92, 29, 36, 0.85);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .book-info {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .book-info h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .book-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Why Book Center Section */
+        .why-us {
+            background: linear-gradient(135deg, #f4efe4 0%, var(--bg-cream) 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            padding: 2.5rem 1.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-box h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Bookstore CTA Section */
+        .cta-banner {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner h2 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-banner .btn-outline {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .cta-banner .btn-outline:hover {
+            background-color: #ffffff;
+            color: var(--primary);
+        }
+
+        /* Contact Section — STRICTLY ZERO IMAGES */
+        .contact {
+            background-color: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info-card {
+            background: var(--bg-cream);
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-detail-icon {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-top: 0.1rem;
+        }
+
+        .contact-detail-text h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-detail-text p, 
+        .contact-detail-text a {
+            color: var(--text-muted);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(92, 29, 36, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: rgba(46, 125, 50, 0.1);
+            color: #2e7d32;
+            border: 1px solid rgba(46, 125, 50, 0.3);
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: rgba(198, 40, 40, 0.1);
+            color: #c62828;
+            border: 1px solid rgba(198, 40, 40, 0.3);
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            color: var(--accent);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        .footer-col p {
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.75);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact-info a:hover {
+            color: var(--accent);
+        }
+
+        .footer-decor {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 0 0 2rem;
+        }
+
+        .footer-decor .line {
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent) 0%, rgba(255,255,255,0.15) 100%);
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: #ffffff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent);
+            color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--bg-cream);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form-wrapper,
+            .contact-info-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo serif-font">Alfalah Book Center</a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="#collections" class="btn btn-outline" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; display: none; @media(min-width: 768px){display:inline-flex;}">Explore Books</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-location">
+                        📍 Karachi, Pakistan
+                    </div>
+                    <h1 class="serif-font">Discover Your Next Great Read</h1>
+                    <p>Explore books and reading collections at Alfalah Book Center in Karachi, Pakistan.</p>
+                    <div class="hero-buttons">
+                        <a href="#collections" class="btn btn-primary">Explore Books</a>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop" alt="Stacks of curated books and novels on wooden library shelves">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT BOOK CENTER -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?q=80&w=1000&auto=format&fit=crop" alt="Open book pages and reading collection at Book Center">
+                </div>
+                <div class="about-text">
+                    <span class="badge-label">About Our Bookstore</span>
+                    <h3 class="serif-font">A Dedicated Space for Books, Reading & Learning</h3>
+                    <p>Alfalah Book Center in Karachi is your destination for exploring a wide variety of books, academic materials, novels, and educational titles. We cater to diverse reading interests, students, and book enthusiasts alike.</p>
+                    <p>Whether you are looking to expand your knowledge through academic reading or discover new literary titles, our book-focused shopping experience connects you with the books you need.</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Inquire About Books</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. BOOK COLLECTIONS / CATEGORIES -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-label">Browse Genres</span>
+                <h2 class="serif-font">Book Collections</h2>
+                <p>Explore our carefully curated reading categories and book genres available for inquiry.</p>
+            </div>
+
+            <div class="collections-grid">
+                <!-- Fiction -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop" alt="Fiction books and novels collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Fiction</h3>
+                        <p>Immersive storytelling, classic literature, and contemporary stories.</p>
+                    </div>
+                </div>
+
+                <!-- Non-Fiction -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Non-fiction books and informative reading materials">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Non-Fiction</h3>
+                        <p>Informative guides, biographies, history, and thought-provoking insights.</p>
+                    </div>
+                </div>
+
+                <!-- Academic Books -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" alt="Academic textbooks and study reference books">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Academic Books</h3>
+                        <p>Curriculum textbooks, reference materials, and study guides.</p>
+                    </div>
+                </div>
+
+                <!-- Children's Books -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800&auto=format&fit=crop" alt="Colorful children storybooks and learning books">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Children's Books</h3>
+                        <p>Engaging storybooks and early learning books for young readers.</p>
+                    </div>
+                </div>
+
+                <!-- Novels -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?q=80&w=800&auto=format&fit=crop" alt="Novels and paperbacks stacked neatly">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Novels</h3>
+                        <p>Bestselling paperbacks and hardcover novels across multiple genres.</p>
+                    </div>
+                </div>
+
+                <!-- Educational Books -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop" alt="Educational books and learning resources">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Educational Books</h3>
+                        <p>Skill development books, language learning, and educational aids.</p>
+                    </div>
+                </div>
+
+                <!-- Self-Development -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=800&auto=format&fit=crop" alt="Self-development and personal growth books">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">Self-Development</h3>
+                        <p>Books focused on personal growth, motivation, and productivity.</p>
+                    </div>
+                </div>
+
+                <!-- General Reading -->
+                <div class="collection-card">
+                    <div class="collection-img-box">
+                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=800&auto=format&fit=crop" alt="General reading books and leisure literature">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="serif-font">General Reading</h3>
+                        <p>Leisure reading materials, magazines, and poetry collections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FEATURED BOOK SECTION -->
+    <section id="categories" class="featured-books">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-label">Example Collection</span>
+                <h2 class="serif-font">Featured Collection</h2>
+                <p>Browse sample book titles and categories available at Alfalah Book Center. Contact us to check specific titles or ask about availability.</p>
+            </div>
+
+            <div class="books-grid">
+                <!-- Sample Book 1 -->
+                <div class="book-card">
+                    <div class="book-img-container">
+                        <span class="book-tag">Fiction</span>
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800&auto=format&fit=crop" alt="Sample fiction book cover">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="serif-font">Classic Fiction Titles</h3>
+                        <p>Explore timeless stories and acclaimed fiction paperbacks in our store collection.</p>
+                        <a href="https://wa.me/923218943450?text=Hello,%20I%20would%20like%20to%20ask%20about%20Classic%20Fiction%20Titles" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.6rem 1rem;">Ask About This Book</a>
+                    </div>
+                </div>
+
+                <!-- Sample Book 2 -->
+                <div class="book-card">
+                    <div class="book-img-container">
+                        <span class="book-tag">Academic</span>
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800&auto=format&fit=crop" alt="Sample academic study book">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="serif-font">Academic Study Guides</h3>
+                        <p>Find reference textbooks and student guides designed for educational support.</p>
+                        <a href="https://wa.me/923218943450?text=Hello,%20I%20would%20like%20to%20ask%20about%20Academic%20Study%20Guides" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.6rem 1rem;">Ask About This Book</a>
+                    </div>
+                </div>
+
+                <!-- Sample Book 3 -->
+                <div class="book-card">
+                    <div class="book-img-container">
+                        <span class="book-tag">Children's</span>
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop" alt="Sample children storybook">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="serif-font">Children's Storybooks</h3>
+                        <p>Colorful and illustrated storybooks to inspire young readers and learners.</p>
+                        <a href="https://wa.me/923218943450?text=Hello,%20I%20would%20like%20to%20ask%20about%20Childrens%20Storybooks" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.9rem; padding: 0.6rem 1rem;">Ask About This Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WHY BOOK CENTER -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-label">Customer Experience</span>
+                <h2 class="serif-font">Why Alfalah Book Center</h2>
+                <p>We provide a welcoming environment and dedicated assistance for all book lovers in Karachi.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="serif-font">Explore Different Book Categories</h3>
+                    <p>Discover a wide selection spanning fiction, academic texts, children's books, and novels.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3 class="serif-font">Find Books for Learning & Reading</h3>
+                    <p>Access educational resources and reading materials suited for students and enthusiasts.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="serif-font">Discover New Reading Interests</h3>
+                    <p>Browse diverse titles and genres to find your next favorite book or study guide.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="serif-font">Convenient Contact Options</h3>
+                    <p>Reach out directly via phone, WhatsApp, or email to inquire about any book or collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. BOOKSTORE CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2 class="serif-font">Looking for a Book?</h2>
+            <p>Get in touch with Alfalah Book Center to ask about books and available collections.</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/923218943450" target="_blank" rel="noopener noreferrer" class="btn btn-gold">WhatsApp Us</a>
+                <a href="tel:+923218943450" class="btn btn-outline">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONTACT SECTION — IMPORTANT: ZERO IMAGES -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge-label">Get In Touch</span>
+                <h2 class="serif-font">Contact Alfalah Book Center</h2>
+                <p>Have questions about a book or collection? Reach out to us directly in Karachi, Pakistan.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Card -->
+                <div class="contact-info-card">
+                    <h3 class="serif-font">Alfalah Book Center</h3>
+                    <p>Contact us through any of the channels below or fill out the form to send an inquiry.</p>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📍</div>
+                        <div class="contact-detail-text">
+                            <h4>Location</h4>
+                            <p>Bangla Bazaar Sector 15 A Orangi Town, Karachi, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📞</div>
+                        <div class="contact-detail-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:03333319533">0333 3319533</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">💬</div>
+                        <div class="contact-detail-text">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/923333319533" target="_blank" rel="noopener noreferrer">0333 3319533</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Wrapper -->
+                <div class="contact-form-wrapper">
+                    <h3 class="serif-font">Send an Inquiry</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookCategory" class="form-label">Book / Category</label>
+                            <input type="text" id="bookCategory" name="bookCategory" class="form-control" placeholder="e.g., Novels, Academic Books, Fiction" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="What book or collection are you looking for?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="serif-font">Alfalah Book Center</h3>
+                    <p>Books, reading and learning in Karachi, Pakistan.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#collections">Fiction</a></li>
+                        <li><a href="#collections">Non-Fiction</a></li>
+                        <li><a href="#collections">Academic Books</a></li>
+                        <li><a href="#collections">Children's Books</a></li>
+                        <li><a href="#collections">Novels</a></li>
+                        <li><a href="#collections">Educational Books</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Alfalah Book Center</h4>
+                    <ul class="footer-contact-info">
+                        <li>📍 Bangla Bazaar Sector 15 A Orangi Town, Karachi, Pakistan</li>
+                        <li>📞 <a href="tel:03333319533">0333 3319533</a></li>
+                        <li>💬 <a href="https://wa.me/923333319533" target="_blank" rel="noopener noreferrer">0333 3319533</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-decor" aria-hidden="true">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Alfalah Book Center. All Rights Reserved.</p>
+                <p>Bangla Bazaar Sector 15 A Orangi Town, Karachi, Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+        ↑
+    </button>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year automatically
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Sticky Navbar & Scroll shadow
+            const navbar = document.getElementById('navbar');
+            const backToTopBtn = document.getElementById('backToTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+
+                // Active nav link highlight on scroll
+                updateActiveNavOnScroll();
+            });
+
+            // Back to top action
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Mobile Hamburger Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const navLinksItems = document.querySelectorAll('.nav-link');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu after selecting a link
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Active Navigation State management
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinksItems.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            function updateActiveNavOnScroll() {
+                const sections = document.querySelectorAll('section');
+                const scrollPos = window.scrollY + 200;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinksItems.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Contact Form Validation & WhatsApp inquiry
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const fullName = document.getElementById('fullName').value.trim();
+                const bookCategory = document.getElementById('bookCategory').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!fullName || !bookCategory || !message) {
+                    showFormMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+
+                showFormMessage(`Thank you, ${fullName}! Your inquiry regarding "${bookCategory}" has been received. Please click below to send your message instantly on WhatsApp.`, 'success');
+
+                const whatsappUrl = `https://wa.me/923333319533?text=Name:%20${encodeURIComponent(fullName)}%0ABook/Category:%20${encodeURIComponent(bookCategory)}%0AMessage:%20${encodeURIComponent(message)}`;
+
+                setTimeout(() => {
+                    if (!document.getElementById('quickWaBtn')) {
+                        const waBtn = document.createElement('a');
+                        waBtn.id = 'quickWaBtn';
+                        waBtn.href = whatsappUrl;
+                        waBtn.target = '_blank';
+                        waBtn.rel = 'noopener noreferrer';
+                        waBtn.className = 'btn btn-gold';
+                        waBtn.style.marginTop = '1rem';
+                        waBtn.style.width = '100%';
+                        waBtn.innerHTML = '💬 Send Inquiry via WhatsApp Now';
+                        formMessage.appendChild(waBtn);
+                    }
+                }, 200);
+            });
+
+            function showFormMessage(text, type) {
+                formMessage.textContent = text;
+                formMessage.className = `form-message ${type}`;
+            }
+        });
+    </script>
+</body>
+</html>
